@@ -1,1 +1,1 @@
-# buffer
+# Go buffer a C buffer
