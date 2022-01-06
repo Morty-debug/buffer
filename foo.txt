@@ -1,3 +1,0 @@
-hola mundo
-desde GOLANG
-OK
