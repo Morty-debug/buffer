@@ -5,15 +5,15 @@
 int bufftofile(char *buffer, long size){
 
 	//creamos el archivo
-	FILE *f_dst = fopen("OUT", "wb");
+	FILE *f_dst = fopen("bufferC", "wb");
 	if(f_dst == NULL){
-		printf("ERROR - No se pudo crear el archivo\n");
+		printf("ERROR - No se pudo crear el archivo 'bufferC'\n");
 		return 1;
 	}
 
 	//escribimos en el archivo
 	if(fwrite(buffer, 1, size, f_dst) != size){
-		printf("ERROR - No se pudo crear el archivo\n");
+		printf("ERROR - No se pudo escribir el archivo 'bufferC'\n");
 		return 2;
 	}
 
