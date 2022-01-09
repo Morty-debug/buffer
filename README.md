@@ -1,11 +1,15 @@
-# Go buffer a C buffer
+# Go buffer a C buffer y biseversa
 
 WINDOWS:
 ```batch
-ejecutar.bat
+  set PATH=%PATH%;%CD%\lib
+  gcc -fPIC ./include/bufftofile.c -shared -o ./lib/libbufftofile.dll
+  go run main.go
 ```
 
 LINUX:
 ```sh
-./ejecutar.sh
+  export LD_LIBRARY_PATH=$PWD/lib
+  gcc -fPIC ./include/bufftofile.c -shared -o ./lib/libbufftofile.so
+  go run main.go
 ```
