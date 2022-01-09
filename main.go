@@ -55,25 +55,25 @@ func main() {
     
 
     
-	//creamos el archivo
+    //creamos el archivo
     f, err := os.Create("bufferGO")
     if err != nil {
-		fmt.Println("ERROR - No se pudo crear el archivo 'bufferGO'\n")
-		return
+        fmt.Println("ERROR - No se pudo crear el archivo 'bufferGO'\n")
+        return
     }
     defer f.Close()
 
-	//de cbuffer a gobuffer
-	gobuffer := C.GoBytes(unsafe.Pointer(cbuffer), C.int(filesize))
-	_, err2 := f.Write(gobuffer)
-	if err2 != nil {
-		fmt.Println("ERROR - No se pudo escribir el archivo 'bufferGO'\n")
-		return
-	}
-	
-	//mostramos resultado
-	fmt.Println("Archivo: 'original.jpg' replicado en GO")
-	fmt.Println("Errores:  0")
-	    
+    //de cbuffer a gobuffer
+    gobuffer := C.GoBytes(unsafe.Pointer(cbuffer), C.int(filesize))
+    _, err2 := f.Write(gobuffer)
+    if err2 != nil {
+        fmt.Println("ERROR - No se pudo escribir el archivo 'bufferGO'\n")
+        return
+    }
+
+    //mostramos resultado
+    fmt.Println("Archivo: 'original.jpg' replicado en GO")
+    fmt.Println("Errores:  0")
+
 }
 
