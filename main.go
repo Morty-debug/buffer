@@ -49,4 +49,13 @@ func main() {
     //mostramos resultado
     fmt.Println("\nArchivo: OUT")
     fmt.Println("Errores: ",error)
+    
+    
+    //foo := C.CString("")
+    //defer C.free(unsafe.Pointer(foo))
+    //C.test(foo)
+    //fmt.Println("Output is: "+C.GoString(foo)*/
+    asciiBytes := []byte(C.GoString(cbuffer))
+    
+    
 }
