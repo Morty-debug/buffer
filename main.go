@@ -47,7 +47,7 @@ func main() {
         fmt.Println("ERROR - No se pudo crear el archivo 'bufferGO'\n")
         return
     }
-    defer f.Close(
+    defer f.Close()
     //de cbuffer a gobuffer
     gobuffer := C.GoBytes(unsafe.Pointer(cbuffer), C.int(filesize)+1)
     _, err2 := f.Write(gobuffer)
