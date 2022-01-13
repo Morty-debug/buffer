@@ -1,4 +1,3 @@
-# Go buffer a C buffer y biseversa
 
 WINDOWS:
 ```batch
