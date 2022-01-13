@@ -2,7 +2,7 @@
 #include <stdio.h> 
 #include <stdlib.h> 
 
-int bufftofile(char *buffer, long size){
+int bufftofile(void *buffer, long size){
 
 	//creamos el archivo
 	FILE *f_dst = fopen("bufferC", "wb");

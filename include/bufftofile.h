@@ -1,4 +1,4 @@
 #ifndef ___BUFFTOFILE___
 #define __BUFFTOFILE___
-int bufftofile(char * buffer, long size);
+int bufftofile(void * buffer, long size);
 #endif
