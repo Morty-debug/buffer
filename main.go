@@ -1,7 +1,7 @@
 package main
 /* 
 #cgo  CFLAGS:  -I./include 
-#cgo  LDFLAGS:  -L./lib  -lbufftofile -Wl,-rpath=./lib
+#cgo  LDFLAGS:  -L./lib  -lbufftofile 
 #include "bufftofile.h" 
 */  
 import "C" 
