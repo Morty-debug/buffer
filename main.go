@@ -12,25 +12,25 @@ import (
 )
 func main() {
     //archivo a procesar
-    file, err := os.Open("original.jpg")
-    if err != nil {
-        fmt.Println(err)
+    file, err1 := os.Open("original.jpg")
+    if err1 != nil {
+        fmt.Println(err1)
         return
     }
     defer file.Close()
     //archivo estructurado
-    fileinfo, err := file.Stat()
-    if err != nil {
-        fmt.Println(err)
+    fileinfo, err2 := file.Stat()
+    if err2 != nil {
+        fmt.Println(err2)
         return
     }
     //archivo estructurado a buffer
     filesize := fileinfo.Size()
     buffer := make([]byte, filesize)
     //leer buffer
-    bytesread, err := file.Read(buffer)
-    if err != nil {
-        fmt.Println(err)
+    bytesread, err3 := file.Read(buffer)
+    if err3 != nil {
+        fmt.Println(err3)
         return
     }
     //convertir buffer a buffer para C
@@ -42,16 +42,16 @@ func main() {
     fmt.Println("Archivo: 'original.jpg' replicado en C")
     fmt.Println("Errores: ",error)
     //creamos el archivo
-    f, err := os.Create("bufferGO")
-    if err != nil {
+    f, err4 := os.Create("bufferGO")
+    if err4 != nil {
         fmt.Println("ERROR - No se pudo crear el archivo 'bufferGO'\n")
         return
     }
     defer f.Close()
     //de cbuffer a gobuffer
     gobuffer := C.GoBytes(unsafe.Pointer(cbuffer), C.int(filesize)+1)
-    _, err2 := f.Write(gobuffer)
-    if err2 != nil {
+    _, err5 := f.Write(gobuffer)
+    if err5 != nil {
         fmt.Println("ERROR - No se pudo escribir el archivo 'bufferGO'\n")
         return
     }
