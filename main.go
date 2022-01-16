@@ -40,7 +40,7 @@ func main() {
     error := C.bufftofile(cbuffer,csize)
     //mostramos resultado
     fmt.Println("Archivo: 'original.jpg' replicado en C")
-    fmt.Println("Errores: ",error)
+    fmt.Println("Errores: ",error,"\n")
     //creamos el archivo
     f, err4 := os.Create("bufferGO")
     if err4 != nil {
@@ -57,6 +57,6 @@ func main() {
     }
     //mostramos resultado
     fmt.Println("Archivo: 'original.jpg' replicado en GO")
-    fmt.Println("Errores:  0")
+    fmt.Println("Errores:  0\n")
 }
 
