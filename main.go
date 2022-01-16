@@ -14,14 +14,14 @@ func main() {
     //archivo a procesar
     file, err1 := os.Open("original.jpg")
     if err1 != nil {
-        fmt.Println(err1)
+        fmt.Println("ERROR - No se pudo abrir el archivo 'original.jpg'")
         return
     }
     defer file.Close()
     //archivo estructurado
     fileinfo, err2 := file.Stat()
     if err2 != nil {
-        fmt.Println(err2)
+        fmt.Println("ERROR - No se pudo obtener informacion del archivo 'original.jpg'")
         return
     }
     //archivo estructurado a buffer
@@ -30,7 +30,7 @@ func main() {
     //leer buffer
     bytesread, err3 := file.Read(buffer)
     if err3 != nil {
-        fmt.Println(err3)
+        fmt.Println("ERROR - No se pudo leer el archivo 'original.jpg'")
         return
     }
     //convertir buffer a buffer para C
