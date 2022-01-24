@@ -1,15 +1,18 @@
 package main
+
 /* 
 #cgo  CFLAGS:  -I./include 
 #cgo  LDFLAGS:  -L./lib  -lbufftofile 
 #include "bufftofile.h" 
 */  
 import "C" 
+
 import (
     "os"
     "fmt"
     "unsafe"
 )
+
 func main() {
     //archivo a procesar
     file, err1 := os.Open("original.jpg")
